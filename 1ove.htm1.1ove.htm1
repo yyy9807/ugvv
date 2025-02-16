@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>专属告白页面</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+            padding: 20px;
+            text-align: center;
+        }
+        .heart {
+            animation: heartbeat 1.2s infinite;
+            font-size: 80px;
+            margin: 20px;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            15% { transform: scale(1.2); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.1); }
+            60% { transform: scale(1); }
+        }
+        button {
+            width: 200px;
+            padding: 15px;
+            border-radius: 25px;
+            border: none;
+            color: white;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="heart">❤️</div>
+    <h2 style="color:#ff1493">给最可爱的TA</h2>
+    <pre style="font-size:18px">
+自从遇见你
+我的世界都变得明亮了
+你愿意和我一起谱写未来吗？
+    </pre>
+
+    <button onclick="accept()" style="background:#ff69b4">我愿意！</button>
+    <button onclick="reject()" style="background:#999">仔细想想</button>
+
+    <script>
+        function accept() {
+            alert('🎉 从此刻起，你就是我的全世界！❤️');
+            new Audio('https://cdn.pixabay.com/download/audio/2022/11/14/audio_3f9a5faa07.mp3').play(); // 浪漫音乐
+        }
+
+        function reject() {
+            alert('❤️ 这个选项暂时不开放哦~');
+            document.querySelectorAll('button')[1].style.transform = 'translateX(30px)';
+            setTimeout(() => {
+                document.querySelectorAll('button')[1].style.transform = 'translateX(-30px)';
+            }, 100);
+            setTimeout(() => {
+                document.querySelectorAll('button')[1].style.transform = 'translateX(0)';
+            }, 200);
+        }
+    </script>
+</body>
+</html>
